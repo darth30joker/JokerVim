@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "     E-mail    : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2022-10-12 22:29
-"  Version      : 3.0
+"  LastModified : 2022-10-29 23:22
+"  Version      : 3.1
 """"""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
 set nocompatible
@@ -31,6 +31,9 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'joshdick/onedark.vim'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 if has("gui_running")
     if has("mac") || has("gui_macvim")
@@ -108,10 +111,6 @@ function! CurDir()
     return curdir
 endfunction
 
-"format statusline
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
-hi statusline guifg=red guibg=white
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -184,6 +183,11 @@ nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
 
-" CtrlP
+" NerdTree
 nmap <leader>t :NERDTreeToggle<CR>
+nmap <leader>g :TagbarToggle<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
