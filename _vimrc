@@ -61,7 +61,7 @@ if has("gui_running")
     endif
 
     if has("win32")
-        set guifont=Cascadia\ Code:h16
+        set guifont=Cascadia\ Code:h12
     endif
 else
     colorscheme onedark
@@ -190,4 +190,9 @@ nmap <leader>g :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
+if has("mac")
+	let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
+endif
+if has("win32")
+	let g:tagbar_ctags_bin = 'C:\ProgramData\chocolatey\lib\universal-ctags\tools\ctags.exe'
+endif
