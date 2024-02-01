@@ -51,18 +51,22 @@ endif
 
 call plug#end()
 
+if has('nvim')
+	lua require('init')
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fonts and colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme onedark
+
 if has("gui_running")
     set background=dark
-    " colorscheme merbivore
-    " colorscheme desert
-    colorscheme onedark
 
     if has("mac") || has("gui_macvim")
         set lazyredraw
-        set guifont=Cascadia\ Code:h15
+        " set guifont=Cascadia\ Code:h15
+        set guifont=Monaspace\ Krypton:h15
     else
         "set guifont=dejaVu\ Sans\ MONO\ 11
         set guifont=Ubuntu\ Mono\ 12
@@ -71,8 +75,6 @@ if has("gui_running")
     if has("win32")
         set guifont=Cascadia\ Code:h12
     endif
-else
-    colorscheme onedark
 endif
 
 " highlight current line
@@ -115,7 +117,7 @@ set lcs=tab:>.,eol:¬,nbsp:%,trail:.
 
 "function of show infomation of current file
 function! CurDir()
-    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+    let curdir = substitute(getcwd(), '/Users/darthjoker/', "~/", "g")
     return curdir
 endfunction
 
@@ -192,9 +194,12 @@ nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
 
 if has('nvim')
-	lua require('init')
 	nmap <leader>t :NvimTreeToggle<CR>
 	nmap <C-t> <esc>:NvimTreeToggle<enter>
+
+	let g:vista_default_executive = '/opt/homebrew/bin/ctags'
+	let g:vista_icon_indent = ["|-> ", "*-> "]
+	nmap <leader>g :Vista ctags<CR>
 else
 	" NerdTree
 	nmap <leader>t :NERDTreeToggle<CR>
