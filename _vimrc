@@ -29,11 +29,19 @@ syntax enable
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'preservim/nerdtree'
+if has('nvim')
+	Plug 'nvim-tree/nvim-web-devicons'
+	Plug 'nvim-tree/nvim-tree.lua'
+	Plug 'liuchengxu/vista.vim'
+	Plug 'ojroques/nvim-hardline'
+else
+	Plug 'preservim/nerdtree'
+	Plug 'majutsushi/tagbar'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+endif
+
 Plug 'joshdick/onedark.vim'
-Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 if has("gui_running")
     if has("mac") || has("gui_macvim")
@@ -183,9 +191,16 @@ nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
 
-" NerdTree
-nmap <leader>t :NERDTreeToggle<CR>
-nmap <leader>g :TagbarToggle<CR>
+if has('nvim')
+	lua require('init')
+	nmap <leader>t :NvimTreeToggle<CR>
+	nmap <C-t> <esc>:NvimTreeToggle<enter>
+else
+	" NerdTree
+	nmap <leader>t :NERDTreeToggle<CR>
+	" Tagbar
+	nmap <leader>g :TagbarToggle<CR>
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctags
