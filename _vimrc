@@ -1,10 +1,11 @@
-""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 "  Created by Darth Joker
-"     E-mail    : darth30joker@gmail.com
+"  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2022-10-29 23:22
-"  Version      : 3.1
-""""""""""""""""""""""""""""""""""""""""""""
+"  LastModified : 2024-02-02 09:39
+"  Version      : 4.0
+"  Summary      : Supports both vim and neovim.
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
 set nocompatible
 
