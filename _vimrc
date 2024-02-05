@@ -83,8 +83,7 @@ if has("gui_running")
         " set guifont=Cascadia\ Code:h8
         set guifont=Monaspace\ Krypton:h9
     else
-        "set guifont=dejaVu\ Sans\ MONO\ 11
-        set guifont=Ubuntu\ Mono\ 12
+        set guifont=Monaspace\ Krypton:h12
     endif
 endif
 
