@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-02 09:39
-"  Version      : 4.0
+"  LastModified : 2024-02-06 15:09
+"  Version      : 4.1
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -31,10 +31,16 @@ syntax enable
 call plug#begin()
 
 if has('nvim')
+	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-tree/nvim-web-devicons'
 	Plug 'nvim-tree/nvim-tree.lua'
 	Plug 'liuchengxu/vista.vim'
 	Plug 'ojroques/nvim-hardline'
+	Plug 'folke/which-key.nvim'
+	Plug 'mfussenegger/nvim-lint'
+	Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+	Plug 'MunifTanjim/nui.nvim'
+	Plug 'folke/noice.nvim'
 else
 	Plug 'preservim/nerdtree'
 	Plug 'majutsushi/tagbar'

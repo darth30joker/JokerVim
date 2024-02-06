@@ -6,7 +6,6 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require('nvim-tree').setup()
 require('nvim-web-devicons').setup({
   -- globally enable different highlight colors per icon (default to true)
   -- if set to false all icons will have the default icon's color
@@ -22,5 +21,8 @@ require('nvim-web-devicons').setup({
   -- because its name happened to match some extension (default to false)
   strict = true;
 })
+require('nvim-tree').setup()
 
-require('hardline').setup {}
+require('hardline').setup()
+require('bufferline').setup()
+require('noice').setup()
