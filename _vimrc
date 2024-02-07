@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-06 15:09
-"  Version      : 4.1
+"  LastModified : 2024-02-07 09:43
+"  Version      : 4.2
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -24,6 +24,9 @@ set mouse=a
 
 " enable syntax support
 syntax enable
+
+source $VIMRUNTIME/mswin.vim
+behave mswin
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins
@@ -72,15 +75,13 @@ if has("gui_running")
 
     if has("mac") || has("gui_macvim")
         set lazyredraw
-        " set guifont=Cascadia\ Code:h15
         set guifont=Monaspace\ Krypton:h15
+    elseif has("win32")
+        " set guifont=Cascadia\ Code:h8
+        set guifont=Monaspace\ Krypton:h9
     else
         "set guifont=dejaVu\ Sans\ MONO\ 11
         set guifont=Ubuntu\ Mono\ 12
-    endif
-
-    if has("win32")
-        set guifont=Cascadia\ Code:h12
     endif
 endif
 
