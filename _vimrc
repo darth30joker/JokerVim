@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-07 17:29
-"  Version      : 4.3
+"  LastModified : 2024-02-07 21:04
+"  Version      : 4.4
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -123,7 +123,7 @@ set smarttab
 " don't break line
 set lbr
 set list
-set lcs=tab:>.,eol:¬,nbsp:%,trail:.
+set lcs=tab:>.,eol:¬,nbsp:%,trail:.,space:.
 
 "function of show infomation of current file
 function! CurDir()
@@ -205,7 +205,6 @@ nmap <leader>q :q!<cr>
 
 if has('nvim')
 	nmap <leader>t :NvimTreeToggle<CR>
-	nmap <C-t> <esc>:NvimTreeToggle<enter>
 
 	let g:vista_default_executive = '/opt/homebrew/bin/ctags'
 	let g:vista_icon_indent = ["|-> ", "*-> "]
