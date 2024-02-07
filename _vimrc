@@ -51,7 +51,9 @@ else
 	Plug 'vim-airline/vim-airline-themes'
 endif
 
+" themes
 Plug 'joshdick/onedark.vim'
+Plug 'folke/tokyonight.nvim'
 
 if has("gui_running")
     if has("mac") || has("gui_macvim")
@@ -68,7 +70,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fonts and colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme onedark
+" colorscheme onedark
+colorscheme tokyonight-storm
 
 if has("gui_running")
     set background=dark

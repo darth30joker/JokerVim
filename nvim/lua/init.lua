@@ -21,8 +21,15 @@ require('nvim-web-devicons').setup({
   -- because its name happened to match some extension (default to false)
   strict = true;
 })
+
+-- initialize nvim-tree
 require('nvim-tree').setup()
 
+-- initialize hardline
 require('hardline').setup()
+
+-- initialize bufferline
 require('bufferline').setup()
+
+-- initialize noice
 require('noice').setup()
