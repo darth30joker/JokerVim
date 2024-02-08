@@ -207,6 +207,8 @@ let g:mapleader = ","
 nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
+nmap <leader>b :buffers<cr>
+nmap <leader>n :bn<cr>
 
 " shortcuts for buffers
 nmap <leader>b :buffers<cr>
