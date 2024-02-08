@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-07 21:04
-"  Version      : 4.4
+"  LastModified : 2024-02-08 21:24
+"  Version      : 4.5.1
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -202,6 +202,13 @@ let g:mapleader = ","
 nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
+
+" shortcuts for buffers
+nmap <leader>b :buffers<cr>
+nmap <leader>n :bNext<cr>
+
+" shortcuts for vertical split
+nmap <leader>v :vsplit<cr>
 
 if has('nvim')
 	nmap <leader>t :NvimTreeToggle<CR>
