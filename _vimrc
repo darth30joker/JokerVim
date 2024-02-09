@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-08 21:24
-"  Version      : 4.5.1
+"  LastModified : 2024-02-09 21:35
+"  Version      : 4.6.0
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -25,8 +25,10 @@ set mouse=a
 " enable syntax support
 syntax enable
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
+if has('mac') || has('linux')
+	source $VIMRUNTIME/mswin.vim
+	behave mswin
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins
@@ -44,6 +46,7 @@ if has('nvim')
 	Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 	Plug 'MunifTanjim/nui.nvim'
 	Plug 'folke/noice.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 else
 	Plug 'preservim/nerdtree'
 	Plug 'majutsushi/tagbar'
@@ -189,7 +192,9 @@ set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab Line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-set showtabline=1
+if has('vim')
+	set showtabline=1
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Shortcuts
@@ -205,13 +210,19 @@ nmap <leader>q :q!<cr>
 
 " shortcuts for buffers
 nmap <leader>b :buffers<cr>
-nmap <leader>n :bNext<cr>
+nmap <leader>n :bnext<cr>
+nmap <leader>p :bprevious<cr>
 
 " shortcuts for vertical split
 nmap <leader>v :vsplit<cr>
 
 if has('nvim')
 	nmap <leader>t :NvimTreeToggle<CR>
+
+	nmap <leader>ff <cmd>Telescope find_files<cr>
+	nmap <leader>fg <cmd>Telescope live_grep<cr>
+	nmap <leader>fb <cmd>Telescope buffers<cr>
+	nmap <leader>fh <cmd>Telescope help_tags<cr>
 
 	let g:vista_default_executive = '/opt/homebrew/bin/ctags'
 	let g:vista_icon_indent = ["|-> ", "*-> "]
