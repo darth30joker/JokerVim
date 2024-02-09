@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-09 21:35
-"  Version      : 4.6.0
+"  LastModified : 2024-02-09 21:45
+"  Version      : 4.6.1
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -92,8 +92,8 @@ endif
 
 " highlight current line
 set cursorline
-hi cursorline guibg=#222222
-hi CursorColumn guibg=#333333
+" hi cursorline guibg=#222222
+" hi CursorColumn guibg=#333333
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => files and backup
@@ -166,7 +166,7 @@ set magic
 
 " turn off bells
 set noerrorbells
-set novisualbell
+" set novisualbell
 
 " pair matching
 set showmatch
