@@ -29,7 +29,12 @@ require('nvim-tree').setup()
 require('hardline').setup()
 
 -- initialize bufferline
-require('bufferline').setup()
+require('bufferline').setup({
+  options = {
+    buffer_close_icon = "x",
+    modified_icon = "*",
+  }
+})
 
 -- initialize noice
 require("noice").setup({
