@@ -2,8 +2,8 @@
 "  Created by Darth Joker
 "  Email        : darth30joker@gmail.com
 "  CreatedTime  : 2009-02-06 14:03
-"  LastModified : 2024-02-09 21:45
-"  Version      : 4.6.1
+"  LastModified : 2024-02-14 14:50
+"  Version      : 4.6.2
 "  Summary      : Supports both vim and neovim.
 """""""""""""""""""""""""""""""""""""""""""""""""
 " turn off compatible
@@ -220,6 +220,9 @@ nmap <leader>v :vsplit<cr>
 
 if has('nvim')
 	nmap <leader>t :NvimTreeToggle<CR>
+	nmap <leader>a :NvimTreeResize -10<CR>
+	nmap <leader>f :NvimTreeResize +10<CR>
+	nmap <leader>r :NvimTreeRefresh<CR>
 
 	nmap <leader>ff <cmd>Telescope find_files<cr>
 	nmap <leader>fg <cmd>Telescope live_grep<cr>
