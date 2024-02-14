@@ -30,44 +30,36 @@ if has('mac') || has('linux')
 	behave mswin
 endif
 
+" set leader key to ','
+let mapleader = ","
+let g:mapleader = ","
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin()
+if has('vim')
+	call plug#begin()
 
-if has('nvim')
-	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-tree/nvim-web-devicons'
-	Plug 'nvim-tree/nvim-tree.lua'
-	Plug 'liuchengxu/vista.vim'
-	Plug 'ojroques/nvim-hardline'
-	Plug 'folke/which-key.nvim'
-	Plug 'mfussenegger/nvim-lint'
-	Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
-	Plug 'MunifTanjim/nui.nvim'
-	Plug 'folke/noice.nvim'
-	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
-else
 	Plug 'preservim/nerdtree'
 	Plug 'majutsushi/tagbar'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+
+	" themes
+	Plug 'joshdick/onedark.vim'
+	Plug 'folke/tokyonight.nvim'
+
+	if has("gui_running")
+		if has("mac") || has("gui_macvim")
+			Plug 'Yggdroot/indentLine'
+		endif
+	endif
+
+	call plug#end()
 endif
-
-" themes
-Plug 'joshdick/onedark.vim'
-Plug 'folke/tokyonight.nvim'
-
-if has("gui_running")
-    if has("mac") || has("gui_macvim")
-        Plug 'Yggdroot/indentLine'
-    endif
-endif
-
-call plug#end()
 
 if has('nvim')
-	lua require('init')
+	lua require("lua.lazy")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -199,10 +191,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" set leader key to ','
-let mapleader = ","
-let g:mapleader = ","
-
 " set shortcuts for save and quit
 nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
