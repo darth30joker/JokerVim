@@ -58,7 +58,7 @@ if has('vim')
 endif
 
 if has('nvim')
-	lua require("lua.lazy")
+	lua require("config.lazy")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
