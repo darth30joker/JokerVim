@@ -25,10 +25,9 @@ set mouse=a
 " enable syntax support
 syntax enable
 
-if has('mac') || has('linux')
-	source $VIMRUNTIME/mswin.vim
-	behave mswin
-endif
+" mswin behaviour
+source $VIMRUNTIME/mswin.vim
+behave mswin
 
 " set leader key to ','
 let mapleader = ","
@@ -207,16 +206,6 @@ nmap <leader>p :bprevious<cr>
 nmap <leader>v :vsplit<cr>
 
 if has('nvim')
-	nmap <leader>t :NvimTreeToggle<CR>
-	nmap <leader>a :NvimTreeResize -10<CR>
-	nmap <leader>f :NvimTreeResize +10<CR>
-	nmap <leader>r :NvimTreeRefresh<CR>
-
-	nmap <leader>ff <cmd>Telescope find_files<cr>
-	nmap <leader>fg <cmd>Telescope live_grep<cr>
-	nmap <leader>fb <cmd>Telescope buffers<cr>
-	nmap <leader>fh <cmd>Telescope help_tags<cr>
-
 	let g:vista_default_executive = '/opt/homebrew/bin/ctags'
 	let g:vista_icon_indent = ["|-> ", "*-> "]
 	nmap <leader>g :Vista ctags<CR>
