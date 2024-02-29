@@ -30,8 +30,8 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " set leader key to ','
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins
@@ -192,15 +192,13 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " set shortcuts for save and quit
 nmap <leader>s :w!<cr>
-nmap <leader>w :wq!<cr>
+" nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>b :buffers<cr>
-nmap <leader>n :bn<cr>
 
 " shortcuts for buffers
-nmap <leader>b :buffers<cr>
-nmap <leader>n :bnext<cr>
-nmap <leader>p :bprevious<cr>
+nmap <leader>bb :buffers<cr>
+nmap <leader>bn :bnext<cr>
+nmap <leader>bp :bprevious<cr>
 
 " shortcuts for vertical split
 nmap <leader>v :vsplit<cr>
