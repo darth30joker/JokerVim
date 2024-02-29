@@ -66,25 +66,26 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme onedark
 colorscheme tokyonight-storm
+set lazyredraw
 
 if has("gui_running")
     set background=dark
 
     if has("mac") || has("gui_macvim")
-        set lazyredraw
         set guifont=Monaspace\ Krypton:h15
     elseif has("win32")
-        " set guifont=Cascadia\ Code:h8
-        set guifont=Monaspace\ Krypton:h9
+        set guifont=Monaspace\ Krypton:h6
     else
-        set guifont=Monaspace\ Krypton:h12
+        set guifont=Monaspace\ Krypton:h10
     endif
 endif
 
 " highlight current line
 set cursorline
+if has('vim')
 " hi cursorline guibg=#222222
 " hi CursorColumn guibg=#333333
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => files and backup
