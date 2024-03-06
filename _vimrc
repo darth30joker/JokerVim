@@ -193,7 +193,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " set shortcuts for save and quit
 nmap <leader>s :w!<cr>
-" nmap <leader>w :wq!<cr>
+nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
 
 " shortcuts for buffers
