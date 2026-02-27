@@ -16,6 +16,9 @@ vim.keymap.set('n', '<leader>w', ':wq!<cr>')
 vim.keymap.set('n', '<leader>q', ':q!<cr>')
 
 vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>ff', ':Telescope find_files<cr>')
+-- vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')
 
 -- lazy.nvim
 require("config.lazy")
