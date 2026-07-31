@@ -1,14 +1,15 @@
 return {
-    {
-        "nvim-tree/nvim-tree.lua",
-        config = function()
-            require("nvim-tree").setup()
-        end,
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = {
+      "NvimTreeOpen",
+      "NvimTreeToggle",
+      "NvimTreeFocus",
+      "NvimTreeFindFile",
     },
-    {
-        "nvim-tree/nvim-web-devicons",
-        config = function()
-            require("nvim-tree").setup()
-        end,
-    }
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {},
+  },
 }

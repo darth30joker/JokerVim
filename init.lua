@@ -5,7 +5,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.showtabline = 2
 
 -- Nerd font is not installed
