@@ -7,9 +7,10 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.wrap = true
 vim.opt.showtabline = 2
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
--- Nerd font is not installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- Don't show mode
 vim.opt.showmode = false
@@ -36,7 +37,7 @@ vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<cr>')
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<cr>')
--- vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', ':Telescope buffers<cr>')
 
 -- lazy.nvim

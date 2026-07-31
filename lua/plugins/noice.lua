@@ -38,5 +38,8 @@ return {
         end
         require("noice").setup(opts)
       end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+      },
     }
 }
